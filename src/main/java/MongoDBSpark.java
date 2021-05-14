@@ -180,7 +180,10 @@ public final class MongoDBSpark {
                 .set("spark.mongodb.input.uri", uri)
                 .set("spark.mongodb.output.uri", uri)
                 .set("spark.mongodb.input.database", "sample_mflix")
-                .set("spark.mongodb.input.collection", "spark");
+                .set("spark.mongodb.input.collection", "spark")
+                .set("spark.driver.memory","4g")
+                .set("spark.driver.maxResultSize", "2g");
+
         return new JavaSparkContext(conf);
     }
 
